@@ -11,16 +11,16 @@ const fi = (function() {
        }
        return collection
      },
- 
+
        map: function(collection,callback) {
          let arrayCollection=(Array.isArray(collection))?collection:Object.values(collection);
          let newCollection=[];
          for(const element of arrayCollection){
          newCollection.push(callback(element))}
- 
+
          return newCollection;
        },
- 
+
      reduce: function(collection, callback,acc) {
        let arrayCollection=(Array.isArray(collection))?collection:Object.values(collection);
        if(acc){
@@ -36,7 +36,7 @@ const fi = (function() {
            }
            return acc;}
      },
- 
+
      find:function(collection,e){
        let arrayCollection=(Array.isArray(collection))?collection:Object.values(Object);
        for(const el of arrayCollection){
@@ -54,15 +54,15 @@ const fi = (function() {
          }
        } return newCollection;
    },
- 
+
 
    size:function(collection){
        let arrayCollection=(Array.isArray(collection))?collection:Object.values(collection);
        return arrayCollection.length;
- 
+
      },
- 
-    
+
+
      first:function(array, n=1){
        return (n===1)?array[0]:array.slice(0,n);
    },
@@ -78,24 +78,24 @@ const fi = (function() {
      }
      return newArray;
    },
- 
- 
+
+
    sortBy: function(array, callback) {
        const newArray = [...array];
        return newArray.sort(function(a,b) {
          return callback(a) - callback(b);
        });
      },
- 
-    
- 
+
+
+
   keys:function(object){
     let array=[];
     for (const keys in object){
       array.push(keys);
     }return array;
   },
- 
+
  values: function(object){
    let values=[];
    for (const key in object){
@@ -120,7 +120,7 @@ const fi = (function() {
      },
       uniq: function(array, isSorted, callback = (a) => a) {
        const uniqueArray = [];
- 
+
        for (const element of array) {
          let counter = 0;
          for (const uniqElement of uniqueArray) {
@@ -132,7 +132,7 @@ const fi = (function() {
            uniqueArray.push(element);
          }
        }
- 
+
        return uniqueArray;
      },
      functions: function(obj) {
